@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D to 3D</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #2e2e2e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .imgBx {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .imgBx img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+            z-index: calc(1 + var(--i));
+            opacity: calc(1 - (0.2 * var(--j)));
+        }
+
+        .imgBx:hover img {
+            transform: rotate(-30deg) skew(25deg) translateX(calc(35px*var(--i))) translateY(calc(-35px*var(--i)));
+            cursor: pointer;
+            box-shadow: -20px 20px 20px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="imgBx">
+        <img src="https://images.unsplash.com/photo-1629019625736-89ff131a723c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1960&q=80"
+            alt="" width="300px" height="300px" style="--i:2;--j:0">
+        <img src="https://images.unsplash.com/photo-1629019625736-89ff131a723c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1960&q=80"
+            alt="" width="300px" height="300px" style="--i:1;--j:1">
+        <img src="https://images.unsplash.com/photo-1629019625736-89ff131a723c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1960&q=80"
+            alt="" width="300px" height="300px" style="--i:0;--j:2">
+        <img src="https://images.unsplash.com/photo-1629019625736-89ff131a723c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1960&q=80"
+            alt="" width="300px" height="300px" style="--i:-1;--j:3">
+        <img src="https://images.unsplash.com/photo-1629019625736-89ff131a723c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1960&q=80"
+            alt="" width="300px" height="300px" style="--i:-2;--j:4">
+    </div>
+</body>
+
+</html>
