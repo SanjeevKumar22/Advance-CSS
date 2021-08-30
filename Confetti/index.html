@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Confetti</title>
+</head>
+<body>
+    <section>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat ea vitae nisi obcaecati voluptates tempora doloribus iure harum ut, recusandae labore voluptatibus nemo dolor mollitia alias blanditiis maxime numquam atque!</p>
+        <a href="#" class="btn">Click Here</a>
+        <div class="popup">
+            <h2>Your Content goes here..</h2>
+            <b class="close">x</b>
+        </div>
+    </section>
+    <canvas id="my-canvas"></canvas>
+
+    <script src="./index.min.js"></script>
+   <script>
+       let button=document.querySelector('.btn');
+       let popup=document.querySelector('.popup');
+       let close=document.querySelector('.close');
+let con=document.querySelector('#my-canvas');
+       button.onclick=function(){
+           popup.classList.add('active');
+           con.classList.add('active');
+       }
+       close.onclick=function(){
+           popup.classList.remove('active')
+           con.classList.remove('active');
+              }
+              var confettiSettings = { target: 'my-canvas' };
+var confetti = new ConfettiGenerator(confettiSettings);
+confetti.render();
+
+   </script>
+</body>
+</html>
